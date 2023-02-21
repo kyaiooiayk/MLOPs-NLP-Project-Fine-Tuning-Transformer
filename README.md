@@ -9,7 +9,7 @@
 ![pl](images/summary.png)
 ***
 
-## [Step #0: Project Setup](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/week_0_project_setup)
+## [Step #0: Project Setup](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_0_project_setup)
 - This covers:
     - How to get the data?
     - How to process the data?
