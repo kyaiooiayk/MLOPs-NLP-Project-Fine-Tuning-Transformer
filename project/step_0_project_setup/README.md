@@ -1,4 +1,3 @@
-
 # Step #0 - Project setup
 
 - [x] Step #0: Project Setup
@@ -22,9 +21,15 @@
 - Install the Huggingface datasets: `pip install datasets`
 - Install the Huggingface LLM packages: `pip install transformers`
 - Install PT lightening: `pip install pytorch_lightning`
+- Dump the current installed packages: `pip freeze > requirements.txt`. If anyone else would like to follow what you have done all they need to do is: `pip install -r requirements.txt`
+***
+
+## Programming best prectice
 - Install `black` linter on MacOS system: `brew install black`
 - Install `flake8` linter on a MacOS system: `brew install black`
-- Dump the current installed packages: `pip freeze > requirements.txt`. If anyone else would like to follow what you have done all the need to do is: `pip install -r requirements.txt`
+- Start black on MacOS with: `brew services start black`.
+- Use `black name_of_your_python_script.py` which will automatically reformat the code for you.
+- Use `flake8 name_of_your_python_script.py` to have see if any suggestion about code formatting is printed on screen.
 ***
 
 ## Setting up jupyter notebook
@@ -46,11 +51,6 @@
 ## Jupyter notebook analysis
 - The `data_exploration.ipynb` is used to quickly explore the dataset.
 - Some more EDA could have been done here to be honest. I will leave it for the future.
-***
-
-## Lintering your code
-- Start black on MacOS with: `brew services start black`. This will automatically reformat the code for you.
-- Use `flake8 name_of_your_python_script.py` to have see if any suggestion about code formatting is printed on screen.
 ***
 
 ## Loading the data - `data.py`
