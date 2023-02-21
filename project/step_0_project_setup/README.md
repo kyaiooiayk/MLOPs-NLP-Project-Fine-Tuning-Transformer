@@ -21,7 +21,7 @@
 - Install the Huggingface datasets: `pip install datasets`
 - Install the Huggingface LLM packages: `pip install transformers`
 - Install PT lightening: `pip install pytorch_lightning`
-- Dump the current installed packages: `pip freeze > requirements.txt`. If anyone else would like to follow what you have done all they need to do is: `pip install -r requirements.txt`
+- Install `pipreqs` with: `pip install pipreqs`, then on the same folder of this project: `pipreqs`. This is better than `pip freeze > requirements.txt` which will save all the dependencies. If anyone else would like to follow what you have done all they need to do is: `pip install -r requirements.txt`
 ***
 
 ## Programming best prectice

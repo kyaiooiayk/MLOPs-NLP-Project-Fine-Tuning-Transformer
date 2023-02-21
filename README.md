@@ -13,7 +13,7 @@
 ## [Step #0: Project Setup](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_0_project_setup)
 - How to get the data?
 - How to process the data?
-- How to define dataloaders?
+- How to define  a `DataModules` in ⚡ Pytorch Lightning as opposed to the Vanilla Pytorch `DataLoaders`
 - How to build a model to fine tune a pre-trained transformer on a classification task?
 - How to train the model on both CPUs on your local machine or GPU on GoogleColab?
 - How to do the inference?
