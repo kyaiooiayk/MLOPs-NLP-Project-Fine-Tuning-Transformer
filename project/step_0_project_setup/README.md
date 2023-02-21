@@ -69,6 +69,29 @@
 - In PyTorch Lightning, models are built with LightningModule, which has all the functionality of a vanilla torch.nn.Module which helps you cut down on boilerplate and help separate out the ML engineering code from the actual machine learning.
 - If you are interested in a line-by-line comparison btw vanilla and lightening please check [MLP in PyTorch and Lightning.ipynb](https://github.com/kyaiooiayk/PyTorch-Notes/blob/main/tutorials/MLP%20in%20PyTorch%20and%20Lightning.ipynb)
 - Another important point to keep in mind here is that we are fine tuning a larger pre-trained model called: `google/bert_uncased_L-2_H-128_A-2` on a classification task having 2 classes.
+```python
+class ColaModel(pl.LightningModule):
+    def __init__(self, model_name="google/bert_uncased_L-2_H-128_A-2", lr=1e-2):
+        super(ColaModel, self).__init__()
+        self.save_hyperparameters()
+        
+        # We have two classes only
+        self.num_classes = 2
+            
+        # Loading the pre-trained model
+        self.bert = AutoModel.from_pretrained(model_name)
+        
+        # Adding one last layer which needs to be trained against 2 classes
+        self.W = nn.Linear(self.bert.config.hidden_size, self.num_classes)
+
+
+    def forward(self, input_ids, attention_mask):
+        outputs = self.bert(input_ids=input_ids, attention_mask=attention_mask)
+
+        h_cls = outputs.last_hidden_state[:, 0]
+        logits = self.W(h_cls)
+        return logits
+```
 - The number of params of the pre-trained model vs the number of parameter in the last layer we are fine tuning can be seen below:
 ```shell
   | Name | Type      | Params
