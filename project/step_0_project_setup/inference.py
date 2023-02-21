@@ -31,11 +31,11 @@ if __name__ == "__main__":
     print("**********")
     print("Example #1")
     sentence = "The boy is sitting on a bench"
-    predictor = ColaPredictor("./models/epoch=2-step=102.ckpt")
+    predictor = ColaPredictor("./models/epoch=1-step=68.ckpt")
     print(predictor.predict(sentence))
 
     print("**********")
     print("Example #2")
     sentence = "They not yelled us!"
-    predictor = ColaPredictor("./models/epoch=2-step=102.ckpt")
+    predictor = ColaPredictor("./models/epoch=1-step=68.ckpt")
     print(predictor.predict(sentence))

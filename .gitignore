@@ -5,3 +5,4 @@ DATASETS
 **/__pycache__
 **/*.h5
 **/model.png
+**/*.ckpt

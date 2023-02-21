@@ -129,7 +129,7 @@ class ColaModel(pl.LightningModule):
     - Get the run time (inference) input
     - Convert the input in the required format
     - Get the predictions
-- In the specific, go inside folder `./model/` and look for the name of the checkpoint last save, in my case it was `epoch=2-step=102.ckpt`. Copy this value and paste it inside the `inference.py` script.
+- In the specific, go inside folder `./model/` and look for the name of the checkpoint last save, in my case it was `epoch=1-step=68.ckpt`. Copy this value and paste it inside the `inference.py` script. Please note the PT saves only if there is an improvement.
 - Run inference with: `python inference.py`
 - Here I testeed it for two sentences:
 ```python
@@ -146,6 +146,8 @@ if __name__ == "__main__":
     predictor = ColaPredictor("./models/epoch=2-step=102.ckpt")
     print(predictor.predict(sentence))
 ```
+- In my case, the model is not performing very well as is classifying as acceptable both senteces when the second is clearly wrong, problably due to poor choice of hyperparameters. As we are more interested in the all MLOps pipeline rather than creating the best model, I will leave the model as it is.
+
 ***
 
 ## References
