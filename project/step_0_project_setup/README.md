@@ -1,16 +1,16 @@
 
-# Week 0 - Project setup
+# Step #0 - Project setup
 
-- [x] Step 0: Project Setup
-- [ ] Step 1: Model monitoring - Weights and Biases
-- [ ] Step 2: Configurations - Hydra
-- [ ] Step 3: Data Version Control - DVC
-- [ ] Step 4: Model Serialisation - ONNX
-- [ ] Step 5: Model Packaging - Docker
-- [ ] Step 6: CI/CD - GitHub Actions
-- [ ] Step 7: Container Registry - AWS ECR
-- [ ] Step 8: Serverless Deployment - AWS Lambda
-- [ ] Step 9: Prediction Monitoring - Kibana
+- [x] Step #0: Project Setup
+- [ ] Step #1: Model monitoring - Weights and Biases
+- [ ] Step #2: Configurations - Hydra
+- [ ] Step #3: Data Version Control - DVC
+- [ ] Step #4: Model Serialisation - ONNX
+- [ ] Step #5: Model Packaging - Docker
+- [ ] Step #6: CI/CD - GitHub Actions
+- [ ] Step #7: Container Registry - AWS ECR
+- [ ] Step #8: Serverless Deployment - AWS Lambda
+- [ ] Step #9: Prediction Monitoring - Kibana
 ***
 
 ## Creating a virtual environment
@@ -21,7 +21,9 @@
 ## Virtual environment setup
 - Install the Huggingface datasets: `pip install datasets`
 - Install the Huggingface LLM packages: `pip install transformers`
-- Install PT lightening: `pytorch_lightning`
+- Install PT lightening: `pip install pytorch_lightning`
+- Install `black` linter on MacOS system: `brew install black`
+- Install `flake8` linter on a MacOS system: `brew install black`
 - Dump the current installed packages: `pip freeze > requirements.txt`. If anyone else would like to follow what you have done all the need to do is: `pip install -r requirements.txt`
 ***
 
@@ -35,13 +37,20 @@
 ***
 
 ## Dataset
-- The CoLA (Corpus of Linguistic Acceptability) dataset is about given a sentence it has to be classified into one of the two classes: unacceptable if grammatically not correct or acceptable if grammatically correct.
+- The CoLA (Corpus of Linguistic Acceptability) dataset is about given a sentence it has to be classified into one of the two classes: 
+    - Unacceptable if grammatically not correct
+    - Acceptable if grammatically correct
+- The dataset is donwload via the [HugginFace datasets](https://huggingface.co/docs/datasets/index) module for convenience.
 ***
-
 
 ## Jupyter notebook analysis
 - The `data_exploration.ipynb` is used to quickly explore the dataset.
 - Some more EDA could have been done here to be honest. I will leave it for the future.
+***
+
+## Lintering your code
+- Start black on MacOS with: `brew services start black`. This will automatically reformat the code for you.
+- Use `flake8 name_of_your_python_script.py` to have see if any suggestion about code formatting is printed on screen.
 ***
 
 ## Loading the data - `data.py`
@@ -66,6 +75,15 @@
 - The `data.py` housing the DataLoader and the `model.py` housing the LightningModule are brought together inside the `train.py` script where a Trainer is defined.
 - This orchestrates data loading, gradient calculation, optimiser, half precision, distributed computing and logging.
 - I have personally run this tutorial on macbook pro with 12 cores and it tooks something arounf 1 hr to complete.
+***
+
+## Taining time on CPUs and GPUs
+- On my MacBook Pro with 12 CPUs with batch_size=265 and epoches=3, it took 45 minutes
+- On Google Colab on a single K80 batch_size=32 (pay attention to the GPU memory is not infinite!) and epoches=3 it took 5 minutes.
+- If you are interest to know how to conncet you code on GitHub and Google Colab, see [here](https://github.com/kyaiooiayk/Awesome-LLM-Large-Language-Models-Notes). In short, 
+    - The easiest option would be for you to clone this repository.
+    - Navigate to Google Colab and open the notebook directly from Colab.
+    - You can then also write it back to GitHub provided permission to Colab is granted. The whole procedure is automated.
 ***
 
 ## Logging

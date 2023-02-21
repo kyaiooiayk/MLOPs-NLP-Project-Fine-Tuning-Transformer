@@ -14,8 +14,8 @@
     - How to get the data?
     - How to process the data?
     - How to define dataloaders?
-    - How to declare the model?
-    - How to train the model?
+    - How to build a model to fine tune a pre-trained transformer on a classification task?
+    - How to train the model on both CPUs on your local machine or GPU on GoogleColab?
     - How to do the inference?
 ***
 

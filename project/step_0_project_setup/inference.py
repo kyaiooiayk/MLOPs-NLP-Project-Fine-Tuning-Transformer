@@ -28,13 +28,12 @@ class ColaPredictor:
 
 
 if __name__ == "__main__":
-
     print("**********")
     print("Example #1")
     sentence = "The boy is sitting on a bench"
     predictor = ColaPredictor("./models/epoch=2-step=102.ckpt")
     print(predictor.predict(sentence))
-    
+
     print("**********")
     print("Example #2")
     sentence = "They not yelled us!"

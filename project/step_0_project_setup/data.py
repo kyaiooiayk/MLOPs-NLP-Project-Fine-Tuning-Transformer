@@ -1,5 +1,5 @@
 import torch
-import datasets
+
 import pytorch_lightning as pl
 
 from datasets import load_dataset
@@ -7,8 +7,14 @@ from transformers import AutoTokenizer
 
 
 class DataModule(pl.LightningDataModule):
-    def __init__(self, model_name="google/bert_uncased_L-2_H-128_A-2", batch_size=32, num_workers=0):
-
+    def __init__(
+        self,
+        model_name="google/bert_uncased_L-2_H-128_A-2",
+        
+        batch_size=32,
+        # If you do not defined the num_workers an annoyin warning will be displayed
+        num_workers=0,
+    ):
         super().__init__()
 
         self.batch_size = batch_size
@@ -17,8 +23,8 @@ class DataModule(pl.LightningDataModule):
 
     def prepare_data(self):
         """Prepara data
-        
-        Which is called only once and on 1 GPU. Typically something 
+
+        Which is called only once and on 1 GPU. Typically something
         like the data download step we have below.
         """
         cola_dataset = load_dataset("glue", "cola")
@@ -26,17 +32,18 @@ class DataModule(pl.LightningDataModule):
         self.val_data = cola_dataset["validation"]
 
     def tokenize_data(self, example):
+        """Tokenise data"""
         return self.tokenizer(
             example["sentence"],
-            truncation=True,
+            truncation = True,
             padding="max_length",
             max_length=512,
         )
 
     def setup(self, stage=None):
         """Setup
-        
-        Which is called on each GPU separately and accepts stage to 
+
+        Which is called on each GPU separately and accepts stage to
         define if we are at fit or test step
         """
         # we set up only relevant datasets when stage is specified
@@ -53,23 +60,23 @@ class DataModule(pl.LightningDataModule):
 
     def train_dataloader(self):
         return torch.utils.data.DataLoader(
-                self.train_data, 
-                batch_size=self.batch_size, 
-                shuffle=True, 
-                num_workers=self.num_workers
+            self.train_data,
+            batch_size=self.batch_size,
+            shuffle=True,
+            num_workers=self.num_workers,
         )
 
     def val_dataloader(self):
         return torch.utils.data.DataLoader(
-            self.val_data, 
-            batch_size=self.batch_size, 
-            shuffle=False, 
-            num_workers=self.num_workers
+            self.val_data,
+            batch_size=self.batch_size,
+            shuffle=False,
+            num_workers=self.num_workers,
         )
 
 
 if __name__ == "__main__":
-    data_model = DataModule("google/bert_uncased_L-2_H-128_A-2", 32, 12)
+    data_model = DataModule("google/bert_uncased_L-2_H-128_A-2", 32, 12, 1)
     data_model.prepare_data()
     data_model.setup()
     print(next(iter(data_model.train_dataloader()))["input_ids"].shape)
