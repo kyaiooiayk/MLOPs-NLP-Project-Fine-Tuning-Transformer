@@ -1,16 +1,16 @@
 
 # Week 0 - Project setup
 
-- [x] Week 0: Project Setup
-- [ ] Week 1: Model monitoring - Weights and Biases
-- [ ] Week 2: Configurations - Hydra
-- [ ] Week 3: Data Version Control - DVC
-- [ ] Week 4: Model Serialisation - ONNX
-- [ ] Week 5: Model Packaging - Docker
-- [ ] Week 6: CI/CD - GitHub Actions
-- [ ] Week 7: Container Registry - AWS ECR
-- [ ] Week 8: Serverless Deployment - AWS Lambda
-- [ ] Week 9: Prediction Monitoring - Kibana
+- [x] Step 0: Project Setup
+- [ ] Step 1: Model monitoring - Weights and Biases
+- [ ] Step 2: Configurations - Hydra
+- [ ] Step 3: Data Version Control - DVC
+- [ ] Step 4: Model Serialisation - ONNX
+- [ ] Step 5: Model Packaging - Docker
+- [ ] Step 6: CI/CD - GitHub Actions
+- [ ] Step 7: Container Registry - AWS ECR
+- [ ] Step 8: Serverless Deployment - AWS Lambda
+- [ ] Step 9: Prediction Monitoring - Kibana
 ***
 
 ## Creating a virtual environment
@@ -89,4 +89,7 @@
 - [Blog post](https://www.ravirajag.dev/blog/mlops-project-setup-part1)
 - [GitHub code](https://github.com/graviraja/MLOps-Basics/tree/main/week_0_project_setup)
 - [Main GitHub project page](https://github.com/graviraja/MLOps-Basics)
+- [Huggingface Datasets](https://github.com/huggingface/datasets)
+- [Huggingface Transformers](https://github.com/huggingface/transformers)
+- [Pytorch Lightning](https://pytorch-lightning.readthedocs.io/)
 ***

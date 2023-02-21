@@ -1,34 +1,25 @@
 # E2E NLP MLOps
+***
 
-- The goal of this project is implement a semi-complex initial E2E project better described as E2E MLOps. Most of the code presented here are taken from this fantastic 8-week course called [MLOps-Basics](https://github.com/graviraja/MLOps-Basics) but are heavily modified.
+## Introduction
+- The goal of this project is to implement a semi-complex initial E2E project better described as E2E MLOps.
+- Most of the scripts presented here are taken from this fantastic 8-week course called [MLOps-Basics](https://github.com/graviraja/MLOps-Basics) but are heavily modified, especially on their `README.md` files.
 - This project will cover the full MLOps cycle. We'll implement an NLP model based on a pre-trained transformer achitecture which will be be fined-tuned, deployed and ultimately served.
 
 ![pl](images/summary.png)
+***
 
-## Week 0: Project Setup
+## [Step #0: Project Setup](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/week_0_project_setup)
+- This covers:
+    - How to get the data?
+    - How to process the data?
+    - How to define dataloaders?
+    - How to declare the model?
+    - How to train the model?
+    - How to do the inference?
+***
 
-<img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=easy&color=green"/>
-
-Refer to the [Blog Post here](https://www.ravirajag.dev/blog/mlops-project-setup-part1)
-
-The project I have implemented is a simple classification problem. The scope of this week is to understand the following topics:
-
-- `How to get the data?`
-- `How to process the data?`
-- `How to define dataloaders?`
-- `How to declare the model?`
-- `How to train the model?`
-- `How to do the inference?`
-
-![pl](images/pl.jpeg)
-
-Following tech stack is used:
-
-- [Huggingface Datasets](https://github.com/huggingface/datasets)
-- [Huggingface Transformers](https://github.com/huggingface/transformers)
-- [Pytorch Lightning](https://pytorch-lightning.readthedocs.io/)
-
-## Week 1: Model monitoring - Weights and Biases
+## Step #1: Model monitoring - Weights and Biases
 
 <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=easy&color=green"/>
 
@@ -56,7 +47,7 @@ References:
 
 - [WandB Documentation](https://docs.wandb.ai/)
 
-## Week 2: Configurations - Hydra
+## Step #2: Configurations - Hydra
 
 <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=easy&color=green"/>
 
@@ -85,7 +76,7 @@ References
 - [Simone Tutorial on Hydra](https://www.sscardapane.it/tutorials/hydra-tutorial/#executing-multiple-runs)
 
 
-## Week 3: Data Version Control - DVC
+## Step #3: Data Version Control - DVC
 
 <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=easy&color=green"/>
 
@@ -113,7 +104,7 @@ References
 
 - [DVC Tutorial on Versioning data](https://www.youtube.com/watch?v=kLKBcPonMYw)
 
-## Week 4: Model Packaging - ONNX
+## Step #4: Model Packaging - ONNX
 
 <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=medium&color=orange"/>
 
@@ -151,7 +142,7 @@ References
 - [Piotr Blog on onnx conversion](https://tugot17.github.io/data-science-blog/onnx/tutorial/2020/09/21/Exporting-lightning-model-to-onnx.html)
 
 
-## Week 5: Model Packaging - Docker
+## Step #5: Model Packaging - Docker
 
 <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=easy&color=green"/>
 
@@ -181,7 +172,7 @@ References
 - [Analytics vidhya blog](https://www.analyticsvidhya.com/blog/2021/06/a-hands-on-guide-to-containerized-your-machine-learning-workflow-with-docker/)
 
 
-## Week 6: CI/CD - GitHub Actions
+## Step #6: CI/CD - GitHub Actions
 
 <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=medium&color=orange"/>
 
@@ -209,7 +200,7 @@ References
 - [Github actions](https://docs.github.com/en/actions/quickstart)
 
 
-## Week 7: Container Registry - AWS ECR
+## Step #7: Container Registry - AWS ECR
 
 <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=medium&color=orange"/>
 
@@ -234,7 +225,7 @@ In this week, I will be going through the following topics:
 ![Docker](images/ecr_flow.png)
 
 
-## Week 8: Serverless Deployment - AWS Lambda
+## Step #8: Serverless Deployment - AWS Lambda
 
 <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=medium&color=orange"/>
 
@@ -257,7 +248,7 @@ In this week, I will be going through the following topics:
 ![Docker](images/lambda_flow.png)
 
 
-## Week 9: Prediction Monitoring - Kibana
+## Step #9: Prediction Monitoring - Kibana
 
 <img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=medium&color=orange"/>
 
@@ -295,3 +286,7 @@ In this week, I will be going through the following topics:
 - `Creating Kibana Dashboard`
 
 ![Docker](images/kibana_flow.png)
+
+## Refernces
+- [Main GitHub project page](https://github.com/graviraja/MLOps-Basics)
+***
