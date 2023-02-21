@@ -69,6 +69,14 @@
 - In PyTorch Lightning, models are built with LightningModule, which has all the functionality of a vanilla torch.nn.Module which helps you cut down on boilerplate and help separate out the ML engineering code from the actual machine learning.
 - If you are interested in a line-by-line comparison btw vanilla and lightening please check [MLP in PyTorch and Lightning.ipynb](https://github.com/kyaiooiayk/PyTorch-Notes/blob/main/tutorials/MLP%20in%20PyTorch%20and%20Lightning.ipynb)
 - Another important point to keep in mind here is that we are fine tuning a larger pre-trained model called: `google/bert_uncased_L-2_H-128_A-2` on a classification task having 2 classes.
+- The number of params of the pre-trained model vs the number of parameter in the last layer we are fine tuning can be seen below:
+```shell
+  | Name | Type      | Params
+-----------------------------------
+0 | bert | BertModel | 4.4 M 
+1 | W    | Linear    | 258   
+-----------------------------------
+```
 ***
 
 ## Training - `train.py`
