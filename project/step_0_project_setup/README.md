@@ -75,6 +75,8 @@
 - The `data.py` housing the DataLoader and the `model.py` housing the LightningModule are brought together inside the `train.py` script where a Trainer is defined.
 - This orchestrates data loading, gradient calculation, optimiser, half precision, distributed computing and logging.
 - I have personally run this tutorial on macbook pro with 12 cores and it tooks something arounf 1 hr to complete.
+- Before you train your model, if you running it locally on your Mac check the limit of the maximum number of allowed open file with: `ulimit -a` and set to `ulimit -Sn 10000`, otherwise it will throw you an error. If it does, you can always restart the training from the last saved check point.
+- To train the model: `python train.py`.
 ***
 
 ## Taining time on CPUs and GPUs
@@ -87,7 +89,7 @@
 ***
 
 ## Logging
-- To train the model: `python train.py`. This will create a directory called `logs/cola` if not present.
+ This will create a directory called `logs/cola` if not present.
 - You can visualise the tensorboard logs using the following command: `tensorboard --logdir logs/cola` and to see the tensorboard at http://localhost:6006/.
 - After training, update the model checkpoint path in the code and run: `python inference.py`
 ***
@@ -99,8 +101,23 @@
     - Get the run time (inference) input
     - Convert the input in the required format
     - Get the predictions
-- In the specific, go inside folder `./model/epoch=2-step=102.ckpt` and update the path inside the `inference.py` script.
+- In the specific, go inside folder `./model/` and look for the name of the checkpoint last save, in my case it was `epoch=2-step=102.ckpt`. Copy this value and paste it inside the `inference.py` script.
 - Run inference with: `python inference.py`
+- Here I testeed it for two sentences:
+```python
+if __name__ == "__main__":
+    print("**********")
+    print("Example #1")
+    sentence = "The boy is sitting on a bench"
+    predictor = ColaPredictor("./models/epoch=2-step=102.ckpt")
+    print(predictor.predict(sentence))
+
+    print("**********")
+    print("Example #2")
+    sentence = "They not yelled us!"
+    predictor = ColaPredictor("./models/epoch=2-step=102.ckpt")
+    print(predictor.predict(sentence))
+```
 ***
 
 ## References

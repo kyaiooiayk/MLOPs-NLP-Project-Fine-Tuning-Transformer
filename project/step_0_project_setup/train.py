@@ -38,7 +38,7 @@ def main():
         callbacks=[checkpoint_callback, early_stopping_callback],
         log_every_n_steps=1,
         # If you have to resume training fromo the last one check points saved
-        #resume_from_checkpoint="./models/epoch=1-step=68.ckpt",
+        resume_from_checkpoint="./models/epoch=0-step=34.ckpt",
     )
 
     trainer.fit(cola_model, cola_data)
