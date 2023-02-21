@@ -1,6 +1,7 @@
-# MLOps-Basics
+# E2E NLP MLOps
 
-The goal of the series is to understand the basics of MLOps like model building, monitoring, configurations, testing, packaging, deployment, cicd, etc.
+- The goal of this project is implement a semi-complex initial E2E project better described as E2E MLOps. Most of the code presented here are taken from this fantastic 8-week course called [MLOps-Basics](https://github.com/graviraja/MLOps-Basics) but are heavily modified.
+- This project will cover the full MLOps cycle. We'll implement an NLP model based on a pre-trained transformer achitecture which will be be fined-tuned, deployed and ultimately served.
 
 ![pl](images/summary.png)
 
