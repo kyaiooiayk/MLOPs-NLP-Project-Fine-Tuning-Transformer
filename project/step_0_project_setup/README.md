@@ -21,7 +21,8 @@
 - Install the Huggingface datasets: `pip install datasets`
 - Install the Huggingface LLM packages: `pip install transformers`
 - Install PT lightening: `pip install pytorch_lightning`
-- Install `pipreqs` with: `pip install pipreqs`, then on the same folder of this project: `pipreqs`. This is better than `pip freeze > requirements.txt` which will save all the dependencies. If anyone else would like to follow what you have done all they need to do is: `pip install -r requirements.txt`
+- Install `pipreqs` with: `pip install pipreqs`.
+- Install `pip-tools` with: `pip install pip-tools`
 ***
 
 ## Programming best prectice
@@ -30,6 +31,8 @@
 - Start black on MacOS with: `brew services start black`.
 - Use `black name_of_your_python_script.py` which will automatically reformat the code for you.
 - Use `flake8 name_of_your_python_script.py` to have see if any suggestion about code formatting is printed on screen.
+- Write a `requirements.txt` fie with `pipreqs --savepath=requirements.in && pip-compile --resolver=backtracking`. If you want to know more about this last command see [here](https://github.com/kyaiooiayk/Python-Programming/blob/main/tutorials/requirements.md)
+- If anyone else would like to follow what you have done all they need to do is: `pip install -r requirements.txt`
 ***
 
 ## Setting up jupyter notebook
