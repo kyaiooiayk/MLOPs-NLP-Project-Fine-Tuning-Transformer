@@ -19,33 +19,12 @@
 - How to do the inference?
 ***
 
-## Step #1: Model monitoring - Weights and Biases
-
-<img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=easy&color=green"/>
-
-Refer to the [Blog Post here](https://www.ravirajag.dev/blog/mlops-wandb-integration)
-
-Tracking all the experiments like tweaking hyper-parameters, trying different models to test their performance and seeing the connection between model and the input data will help in developing a better model.
-
-The scope of this week is to understand the following topics:
-
+## [Step #1: Model monitoring - Weights and Biases](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_1_wandb_logging)
 - `How to configure basic logging with W&B?`
 - `How to compute metrics and log them in W&B?`
 - `How to add plots in W&B?`
 - `How to add data samples to W&B?`
-
-![wannb](images/wandb.png)
-
-Following tech stack is used:
-
-- [Weights and Biases](https://wandb.ai/site)
-- [torchmetrics](https://torchmetrics.readthedocs.io/)
-
-References:
-
-- [Tutorial on Pytorch Lightning + Weights & Bias](https://www.youtube.com/watch?v=hUXQm46TAKc)
-
-- [WandB Documentation](https://docs.wandb.ai/)
+***
 
 ## Step #2: Configurations - Hydra
 
