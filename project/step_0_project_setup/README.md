@@ -25,7 +25,7 @@
 - Install `pip-tools` with: `pip install pip-tools`
 ***
 
-## Programming best prectice
+## Programming best prectices
 - Install `black` linter on MacOS system: `brew install black`
 - Install `flake8` linter on a MacOS system: `brew install black`
 - Start black on MacOS with: `brew services start black`.
@@ -100,6 +100,7 @@ class ColaModel(pl.LightningModule):
 1 | W    | Linear    | 258   
 -----------------------------------
 ```
+- If you want to know more about how to fine tune tranformer model check [this](https://github.com/kyaiooiayk/Awesome-LLM-Large-Language-Models-Notes) out.
 ***
 
 ## Training - `train.py`
