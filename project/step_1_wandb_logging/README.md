@@ -92,4 +92,8 @@ wandb: Synced proud-mountain-77: https://wandb.ai/<link_specific_to_yout_w_and_b
 - [Blog post](https://www.ravirajag.dev/blog/mlops-wandb-integration)
 - [GitHub code](https://github.com/graviraja/MLOps-Basics/tree/main/week_1_wandb_logging)
 - [Main GitHub project page](https://github.com/graviraja/MLOps-Basics)
+- [Weights and Biases](https://wandb.ai/site)
+- [torchmetrics](https://torchmetrics.readthedocs.io/)
+- [Tutorial on Pytorch Lightning + Weights & Bias](https://www.youtube.com/watch?v=hUXQm46TAKc)
+- [WandB Documentation](https://docs.wandb.ai/)
 ***
