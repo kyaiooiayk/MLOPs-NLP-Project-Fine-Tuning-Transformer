@@ -39,16 +39,23 @@
   - [TensorBoard](https://www.tensorflow.org/tensorboard) It was used in week 0, but will show how W&B is better.
 ***
 
+## W&B
+- **Do we really need this?** For large project where more than one person is working on it, is probably the right choice.
+- **What is it?** W&B is essentially a web-based subscription service for artifact tracking.
+- **Conclusion**: it is my personal opnion this tool is geared towards the first steps of the ML production cycle. These steps are those where you in the process of defining the right achitecture for the problem at hand.
+***
+
 ## Weights and Bias Configuration
-- Create an free accoount at [W&B](https://wandb.ai/site). This is free for public projects and 100GB storage.
-- Once account is created, we need to loging locally: `wandb login`, then gollow the authorisation link and copy paste the api key.
+- Create an free accoount at [W&B](https://wandb.ai/site). This is free for public projects requiring less than 100GB of storage.
+- Once account is created, we need to loging locally: `wandb login`, then follow the authorisation link and copy paste the api key.
 - Create a project at W&B and then use the same name here. So that all the experiments will be logged into that project.
-- Update the `logger` inside the `train.py` script so that all the logs will be tracked in W&B.:
+- Update the `logger` inside the `train.py` script so that all the logs will be tracked in W&B:
 ```python
 # previous week
 tb_logger = pl.loggers.TensorBoardLogger("logs/", name="cola", version=1)
 
 # this week
+from pytorch_lightning.loggers import WandbLogger
 wandb_logger = WandbLogger(project="<your_project_name>", entity="<your_user_name>")
 
 ...
@@ -64,9 +71,11 @@ logger=wandb_logger
     - `train.py` changed and make sure you update the details realted to your W&B account
     - `inference.py` no change, but make sure to update the last saved checkpoint.
     - `model.py` changed especially the part related to the metrics.
+***
+
 
 ## Re-train the model
-- Yes, this step needs to be re-done even if you trained the model in week 0.
+- Yes, this step needs to be re-done even if you trained the model in step #0.
 Once the training is completed in the end of the logs you will see something like:
 
 ```shell
@@ -84,7 +93,7 @@ wandb: Synced proud-mountain-77: https://wandb.ai/<link_specific_to_yout_w_and_b
     - Get the run time (inference) input
     - Convert the input in the required format
     - Get the predictions
-- In the specific, go inside folder `./model/epoch=2-step=102.ckpt` and update the path inside the `inference.py` script.
+- In the specific, go inside folder `./model/epoch=xx-step=yy.ckpt` and update the path inside the `inference.py` script.
 - Run inference with: `python inference.py`
 ***
 
@@ -96,4 +105,5 @@ wandb: Synced proud-mountain-77: https://wandb.ai/<link_specific_to_yout_w_and_b
 - [torchmetrics](https://torchmetrics.readthedocs.io/)
 - [Tutorial on Pytorch Lightning + Weights & Bias](https://www.youtube.com/watch?v=hUXQm46TAKc)
 - [WandB Documentation](https://docs.wandb.ai/)
+- [What does Weights & Biases do? A platform for enabling a collaborative MLOps culture](https://towardsdatascience.com/what-does-weights-biases-do-c060ce6b4b8e)
 ***

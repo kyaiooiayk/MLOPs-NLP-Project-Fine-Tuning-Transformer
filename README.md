@@ -10,6 +10,11 @@
 
 ***
 
+## How to use this 9-step tutorials
+- Each step build on top of the previous one.
+- Do not assume that, just because files have the same name, they would have the same content.
+***
+
 ## [Step #0: Project Setup](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_0_project_setup)
 - How to get the data?
 - How to process the data?
@@ -20,10 +25,10 @@
 ***
 
 ## [Step #1: Model monitoring - Weights and Biases](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_1_wandb_logging)
-- `How to configure basic logging with W&B?`
-- `How to compute metrics and log them in W&B?`
-- `How to add plots in W&B?`
-- `How to add data samples to W&B?`
+- How to configure basic logging with W&B?
+- How to compute metrics and log them in W&B?
+- How to add plots in W&B?
+- How to add data samples to W&B?
 ***
 
 ## Step #2: Configurations - Hydra
