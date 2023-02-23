@@ -39,13 +39,48 @@
 ## An example of how Hydra is different from a simple YAML file
 
 - Let's create a `config.yaml`:
-
 ```shell
 preferences:
-  user: raviraja
-  trait: i_like_my_sleeping
+  user: myself
+  hobby: programming
 ```
+- Let's load this file using `OmegaConf`:
+```python
+from omegaconf import OmegaConf
 
+# loading
+config = OmegaConf.load('config.yaml')
+
+# accessing
+print(config.preferences.user)
+print(config["preferences"]["trait"])
+```
+- Let's load this file using Hydra
+```python
+import hydra
+from omegaconf import OmegaConf
+
+@hydra.main(config_name="basic.yaml")
+def main(cfg):
+    # Print the config file using `to_yaml` method which prints in a pretty manner
+    print(OmegaConf.to_yaml(cfg))
+    print(cfg.preferences.user)
+
+if __name__ == "__main__":
+    main()
+```
+- Config can also be loaded without using `hydra.main` decorator in the following way:
+```python
+from hydra import initialize, compose
+
+initialize(".")  # Assume the configuration file is in the current folder
+cfg = compose(config_name="basic.yaml")
+print(OmegaConf.to_yaml(cfg))
+```
+- What makes Hydra nice, is the way you can override this configuration value on runtime with:
+```python
+python main.py perferences.hobby=sleeping
+```
 ***
 
 ## Hydra configurations
