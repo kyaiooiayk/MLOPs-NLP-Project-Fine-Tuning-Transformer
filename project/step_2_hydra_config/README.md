@@ -73,7 +73,8 @@ if __name__ == "__main__":
 ```python
 from hydra import initialize, compose
 
-initialize(".")  # Assume the configuration file is in the current folder
+# Assume the configuration file is in the current folder
+initialize(".")  
 cfg = compose(config_name="basic.yaml")
 print(OmegaConf.to_yaml(cfg))
 ```

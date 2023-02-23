@@ -32,12 +32,9 @@
 ***
 
 ## [Step #2: Configurations - Hydra](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_2_hydra_config)
-- Basics of Hydra`
-- Overridding configurations`
-- Splitting configuration across multiple files`
-- Variable Interpolation`
-- How to run model with different parameter combinations?`
-
+- Basics of Hydra and how is this different than a simple YMAL file
+- Overridding configurations at run time
+- Splitting configuration across multiple files
 ***
 
 ## Step #3: Data Version Control - DVC
