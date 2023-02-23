@@ -40,11 +40,12 @@
 
 - Let's create a `config.yaml`:
 
-```shell
+```ymal
 preferences:
   user: raviraja
   trait: i_like_my_sleeping
-'''
+```
+
 ***
 
 ## Hydra configurations

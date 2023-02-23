@@ -31,7 +31,7 @@
 - How to add data samples to W&B?
 ***
 
-## [Step #2: Configurations - Hydra]()
+## [Step #2: Configurations - Hydra](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_2_hydra_config)
 - Basics of Hydra`
 - Overridding configurations`
 - Splitting configuration across multiple files`
