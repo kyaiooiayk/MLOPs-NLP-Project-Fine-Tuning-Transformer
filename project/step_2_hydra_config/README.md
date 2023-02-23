@@ -40,7 +40,7 @@
 
 - Let's create a `config.yaml`:
 
-```ymal
+```shell
 preferences:
   user: raviraja
   trait: i_like_my_sleeping
