@@ -31,34 +31,14 @@
 - How to add data samples to W&B?
 ***
 
-## Step #2: Configurations - Hydra
+## [Step #2: Configurations - Hydra]()
+- Basics of Hydra`
+- Overridding configurations`
+- Splitting configuration across multiple files`
+- Variable Interpolation`
+- How to run model with different parameter combinations?`
 
-<img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=easy&color=green"/>
-
-Refer to the [Blog Post here](https://www.ravirajag.dev/blog/mlops-hydra-config)
-
-Configuration management is a necessary for managing complex software systems. Lack of configuration management can cause serious problems with reliability, uptime, and the ability to scale a system.
-
-The scope of this week is to understand the following topics:
-
-- `Basics of Hydra`
-- `Overridding configurations`
-- `Splitting configuration across multiple files`
-- `Variable Interpolation`
-- `How to run model with different parameter combinations?`
-
-![hydra](images/hydra.png)
-
-Following tech stack is used:
-
-- [Hydra](https://hydra.cc/)
-
-References
-
-- [Hydra Documentation](https://hydra.cc/docs/intro)
-
-- [Simone Tutorial on Hydra](https://www.sscardapane.it/tutorials/hydra-tutorial/#executing-multiple-runs)
-
+***
 
 ## Step #3: Data Version Control - DVC
 
