@@ -59,7 +59,22 @@ From a very high-level point of view, DVC works as follows:
 ![image](https://user-images.githubusercontent.com/89139139/221132587-19c1d95e-45a0-45a0-993d-6bc25dcb2dd8.png)
 
 - Add this storage: `dvc remote add -d storage gdrive://1A0zgCLZ1YF`
-- Check the contents of the file `.dvc/config` whether the remote storage is configured correctly or not.
+- Check the contents of the file `.dvc/config` whether the remote storage is configured correctly or not. Remember this is a hidden file, hence use: `ls -a` to see them.
+***
+
+## Pushing files
+- Run the code with: `python train.py` which once finished should have saved the last checkpoint under the `./model/<checkpoint_name>.ckpt` folder.
+- Add this file to the dvc registry with: `dvc add models/<checkpoint_name>.ckpt` pretty much as you would have done with a standard `git command`
+- DVC creates 2 files when you run the `add` command: `.dvc` file and `.gitignore` file. So DVC takes care of not pushing the model to git because `git` is not really design for large file.
+- Push push the model to the Google Drive: `dvc push trained_model.dvc` which will ask for some authentication.
+- Now check if the model was updated to Google Drive.
+- Add these two files: `git add models/trained_model.dvc ../models/.gitignore`
+- Add a committment message `git commit -m "Added trained model to google drive using dvc"`
+- Push `git push`
+***
+
+## Pulling files
+- Pulling the file from dvc is as simple as: `dvc pull trained_model.dvc`
 ***
 
 ## References

@@ -37,8 +37,9 @@
 - Splitting configuration across multiple files
 ***
 
-## [Step #3: Data Version Control - DVC]()
+## [Step #3: Data Version Control - DVC](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_3_dvc)
 - Basics of DVC
+- How DVC is similar to Git
 - Initialising DVC
 - Configuring Remote Storage
 - Saving Model to the Remote Storage
