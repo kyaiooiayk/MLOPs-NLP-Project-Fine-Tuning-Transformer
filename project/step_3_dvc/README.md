@@ -55,6 +55,9 @@ From a very high-level point of view, DVC works as follows:
     - Use some cloud-based services such as S3 and although they are cheap you have to register.
 - Create a folder in your Google Drive called `My_Folder_on_GoogleDrive`.
 - Get the ID of this folder and the address will look like something like this: `https://drive.google.com/drive/u/0/folders/1A0zgCLZ1YF` where the ID the last alphanumeric block if this URL.
+
+![image](https://user-images.githubusercontent.com/89139139/221132587-19c1d95e-45a0-45a0-993d-6bc25dcb2dd8.png)
+
 - Add this storage: `dvc remote add -d storage gdrive://1A0zgCLZ1YF`
 - Check the contents of the file `.dvc/config` whether the remote storage is configured correctly or not.
 ***
