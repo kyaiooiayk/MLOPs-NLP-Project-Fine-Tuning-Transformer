@@ -46,7 +46,7 @@
 - Versioning the models
 ***
 
-## [Step #4: Model Packaging - ONNX]
+## [Step #4: Model Packaging - ONNX](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_4_onnx)
 - Why do we need model packaging?
 - What is ONNX?
 - How to convert a trained model to ONNX format?`
