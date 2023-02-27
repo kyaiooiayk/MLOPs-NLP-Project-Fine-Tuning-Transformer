@@ -54,8 +54,9 @@
 - How to run ONNX converted model in ONNX Runtime?
 ***
 
-## [Step #5: Model Packaging - Docker]()
+## [Step #5: Model Packaging - Docker](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_5_docker)
 - FastAPI wrapper
+- How to create an app with FastAPI
 - Basics of Docker
 - Building Docker Container
 - Docker Compose

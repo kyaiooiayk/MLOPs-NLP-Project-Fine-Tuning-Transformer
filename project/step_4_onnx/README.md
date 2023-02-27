@@ -16,7 +16,8 @@
 - Install these additional packages:
     - `pip install onnx`
     - `pip install onnxruntime`
-- After these extra packages were installed, save the new requirements file with: `pip freeze -> requirements.txt`
+- Write a `requirements.txt` fie with `pipreqs --savepath=requirements.in && pip-compile --resolver=backtracking`. If you want to know more about this last command see [here](https://github.com/kyaiooiayk/Python-Programming/blob/main/tutorials/requirements.md)
+- If anyone else would like to follow what you have done all they need to do is: `pip install -r requirements.txt`
 ***
 
 ## Programming best prectices

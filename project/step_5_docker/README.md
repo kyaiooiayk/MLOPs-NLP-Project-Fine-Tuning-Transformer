@@ -16,7 +16,9 @@
 - Install these additional packages:
     - `pip install fastapi`
     - `pip install uvicorn`
-- After these extra packages were installed, save the new requirements file with: `pip freeze -> requirements.txt`
+- Follow [this instructions](https://github.com/kyaiooiayk/Docker-Notes#installation) to install docker.
+- Write a `requirements.txt` fie with `pipreqs --savepath=requirements.in && pip-compile --resolver=backtracking`. If you want to know more about this last command see [here](https://github.com/kyaiooiayk/Python-Programming/blob/main/tutorials/requirements.md)
+- If anyone else would like to follow what you have done all they need to do is: `pip install -r requirements.txt`
 ***
 
 ## Programming best prectices
@@ -81,11 +83,49 @@ async def get_prediction(text: str):
 - A **Docker Container** is an instance of Docker Image which contains the running application.
 ***
 
+## Create a Docker file
+- A Docker file is a file where a series of instructions are written in order to build a Docker Image. Each instruction in a docker file is a command/operation, for example, what operating system to use, what dependencies to install or how to compile the code, and many such instructions which act as a **layer**.
+- Each line which represents a layers is cached and if we modified some instructions in the Dockerfile then during the build process it will just rebuild the changed layer. Building an image can take some time, so caching is a good way to avoid repeating the same operation.
+- Create a file `Dockerfile` with the following content:
+```shell
+FROM huggingface/transformers-pytorch-cpu:latest
+COPY ./ /app
+WORKDIR /app
+RUN pip install -r requirements_inference.txt
+EXPOSE 8000
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+***
 
 ## How to build the docker image
 - Build the image using the command: `docker build -t inference:latest .`
 - Then run the container using the command: `docker run -p 8000:8000 --name inference_container inference:latest`
-- Alternatively, build and run the container using the command: `docker-compose up`
+***
+
+## Docker composer
+- Docker Compose is a tool that was developed to help define and share multi-container applications. With Compose, we can create a YAML file to define the services and with a single command, can spin everything up or tear it all down.
+- The key difference between `docker` run versus `docker-compose` is that docker run is entirely command line based, while docker-compose reads configuration data from a `YAML` file. The second major difference is that docker run can only start one container at a time, while docker-compose will configure and run multiple.
+- As cloud-native environments increase in complexity, docker run commands will become unmanageable long. When a docker run command becomes more than seventy or eighty characters in length, it makes more sense to configure the container in a docker-compose.yaml file.
+
+## Seeting up a YMAL Docker compose file
+Let's see how to create a compose yaml file called `docker-compose.yml`:
+```shell
+version: '3'
+services:
+  prediction_api:
+    build: .
+    container_name: 'inference_container'
+    ports:
+      - '8000:8000'
+```
+- `services` is where you list all your container, in our case there is only one.
+- Build and run the container using the command: `docker-compose up`
+***
+
+## Docker sharing
+- Sharing can be done in 2 ways:
+    - Commit the Dockerfile which can be used to build the image and container
+    - Push the docker image to a central repository like Docker Hub and pull it from there. You need to create an account in docker hub in-order to be able to push the image.
 ***
 
 ## References
