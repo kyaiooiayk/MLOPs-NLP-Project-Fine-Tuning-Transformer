@@ -62,6 +62,7 @@ async def get_prediction(text: str):
 - Run the application using the command: `uvicorn app:app --ip 0.0.0.0 --port 8000 --reload`
 - Copy and past the following on your browser: http://localhost:8000/
 
+![image](https://user-images.githubusercontent.com/89139139/221551082-5bbea947-f556-4295-b496-1b6cc609b320.png)
 ***
 
 ## Docker
