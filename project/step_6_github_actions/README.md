@@ -77,13 +77,23 @@ jobs:
 - Add this file and push it to GitHub, then move to the online repository and you should be able to see the workflow running under the tab `Actions`.
 
 ![image](https://user-images.githubusercontent.com/89139139/221843412-3ee4213f-9dad-4585-8c1f-9497742121d9.png)
-
+- Now that service account is created, add this to the remote server (google drive). Go to the google drive and navigate to the remote storage folder (MLOps) and this service account email in the sharing permissions.
 ***
 
 ## Google service account
 - In step #3 we have seen how we can out trained model checkpoint on GoogleDrive, but we have done all the authentification manually. To be able to it automatically inside a CI/CD pipeline we need to create a service account.
 - A **service account** is a Google account associated with your GCP (Google Cloud Platform) project, and not a specific user.
-- 
+- Go to [GCP console](https://cloud.google.com/cloud-console), sign-up or log-in depending on your case and create a project.
+- To create a service account, navigate to IAM & Admin in the left sidebar, and select Service Accounts. Click + CREATE SERVICE ACCOUNT, on the next screen, enter Service account name e.g. "MLOps", and click Create.
+![image](https://user-images.githubusercontent.com/89139139/221855484-7f894acb-8c3f-4188-b1e8-63ba46866ceb.png)
+- Provide a name to service account like `model` and click `Done`
+![image](https://user-images.githubusercontent.com/89139139/221855623-81f3e977-b3cc-4a52-a9f4-feda7c87dddd.png)
+- Go the `keys` tab and create a new key. When prompted choose the key type as a `json` format. A json file will be downloaded and keep in mind this is supposed to remain secret.
+![image](https://user-images.githubusercontent.com/89139139/221855761-0deca28d-e8b4-4bb8-8f7b-80659c387ca5.png)
+- Search for `Google Drive API` in the search bar and enable it:
+![image](https://user-images.githubusercontent.com/89139139/221856055-9de18c47-c51d-4ffe-86bd-c5b014e1ae50.png)
+
+
 ***
 
 ## References
