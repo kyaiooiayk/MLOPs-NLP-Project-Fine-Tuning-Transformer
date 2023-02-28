@@ -75,6 +75,9 @@ jobs:
 - `on` is called an event which triggers the workflow. Here it is push event. Whenever a push is happened on the repository, workflow will be triggered. There are [many ways](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows) of triggering the workflow.
 - Checking out the repository step contains the action to checkout the repository. Here we are using actions/checkoutv2 which is a [open source action](https://github.com/marketplace?type=actions).
 - Add this file and push it to GitHub, then move to the online repository and you should be able to see the workflow running under the tab `Actions`.
+
+![image](https://user-images.githubusercontent.com/89139139/221843412-3ee4213f-9dad-4585-8c1f-9497742121d9.png)
+
 ***
 
 ## References
