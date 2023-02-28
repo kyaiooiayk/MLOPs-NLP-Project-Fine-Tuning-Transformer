@@ -58,19 +58,19 @@ jobs:
     steps:
       - name: Basic Information
         run: |
-          echo "🎬 The job was automatically triggered by a ${{ github.event_name }} event."
-          echo "💻 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
-          echo "🎋 Workflow is running on the branch ${{ github.ref }}"
+          echo "The job was automatically triggered by a ${{ github.event_name }} event."
+          echo "This job is now running on a ${{ runner.os }} server hosted by GitHub!"
+          echo "Workflow is running on the branch ${{ github.ref }}"
       - name: Checking out the repository
         uses: actions/checkout@v2
       - name: Information after checking out
         run: |
-          echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-          echo "🖥️ The workflow is now ready to test your code on the runner."
+          echo "The ${{ github.repository }} repository has been cloned to the runner."
+          echo "The workflow is now ready to test your code on the runner."
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "This job's status is ${{ job.status }}."
 ```
 - `on` is called an event which triggers the workflow. Here it is push event. Whenever a push is happened on the repository, workflow will be triggered. There are [many ways](https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows) of triggering the workflow.
 - Checking out the repository step contains the action to checkout the repository. Here we are using actions/checkoutv2 which is a [open source action](https://github.com/marketplace?type=actions).
@@ -78,6 +78,12 @@ jobs:
 
 ![image](https://user-images.githubusercontent.com/89139139/221843412-3ee4213f-9dad-4585-8c1f-9497742121d9.png)
 
+***
+
+## Google service account
+- In step #3 we have seen how we can out trained model checkpoint on GoogleDrive, but we have done all the authentification manually. To be able to it automatically inside a CI/CD pipeline we need to create a service account.
+- A **service account** is a Google account associated with your GCP (Google Cloud Platform) project, and not a specific user.
+- 
 ***
 
 ## References

@@ -62,7 +62,7 @@
 - Docker Compose
 ***
 
-## [Step #6: CI/CD - GitHub Actions]()
+## [Step #6: CI/CD - GitHub Actions](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/blob/main/project/step_6_github_actions/README.md)
 - Basics of GitHub Actions
 - First GitHub Action
 - Creating Google Service Account
