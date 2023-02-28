@@ -92,8 +92,20 @@ jobs:
 ![image](https://user-images.githubusercontent.com/89139139/221855761-0deca28d-e8b4-4bb8-8f7b-80659c387ca5.png)
 - Search for `Google Drive API` in the search bar and enable it:
 ![image](https://user-images.githubusercontent.com/89139139/221856055-9de18c47-c51d-4ffe-86bd-c5b014e1ae50.png)
+***
 
-
+## Configuring DVC to use Google Service account
+- Modify the DVC to use `service account` instead of actual google account as done in step #3. This can be done via:
+```shell
+dvc remote add -d storage gdrive://<your_alpha_numerical_code>
+dvc remote modify storage gdrive_use_service_account true
+dvc remote modify storage gdrive_service_account_json_file_path creds.json
+```
+- We can test it by trying to pull the model using the command:
+```
+cd dvcfiles
+dvc pull trained_model.dvc
+```
 ***
 
 ## References
