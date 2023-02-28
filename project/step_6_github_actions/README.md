@@ -108,6 +108,62 @@ dvc pull trained_model.dvc
 ```
 ***
 
+## Modify the Dockerfile
+```shell
+FROM huggingface/transformers-pytorch-cpu:latest
+
+COPY ./ /app
+WORKDIR /app
+
+# install requirements
+RUN pip install "dvc[gdrive]"
+RUN pip install -r requirements_inference.txt
+
+# initialise dvc
+RUN dvc init --no-scm
+# configuring remote server in dvc
+RUN dvc remote add -d storage gdrive://19JK5AFbqOBlrFVwDHjTrf9uvQFtS0954
+RUN dvc remote modify storage gdrive_use_service_account true
+RUN dvc remote modify storage gdrive_service_account_json_file_path creds.json
+
+# pulling the trained model
+RUN dvc pull dvcfiles/trained_model.dvc
+
+ENV LC_ALL=C.UTF-8
+ENV LANG=C.UTF-8
+
+# running the application
+EXPOSE 8000
+CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "8000"]
+```
+***
+
+## Create a new GitHubAction
+- Now let's create a new github action file in `.github/worflows` folder as `build_docker_image.yaml` with the following content:
+```
+name: Create Docker Container
+
+on: [push]
+
+jobs:
+  mlops-container:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./week_6_github_actions
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Build container
+        run: |
+          docker network create data
+          docker build --tag inference:latest .
+          docker run -d -p 8000:8000 --network data --name inference_container inference:latest
+```
+***
+
 ## References
 - [Blog post](https://www.ravirajag.dev/blog/mlops-github-actions)
 - [GitHub code](https://github.com/graviraja/MLOps-Basics/tree/main/week_6_github_actions)
