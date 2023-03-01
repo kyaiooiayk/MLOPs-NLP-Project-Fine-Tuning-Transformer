@@ -77,9 +77,9 @@
 - Programmatic access to S3
 - Configuring AWS S3 as remote storage in DVC
 - Basics of ECR
+- Differences btw AWS S3 and AWS ECR
 - Configuring GitHub Actions to use S3, ECR
 ***
-
 
 ## Step #8: Serverless Deployment - AWS Lambda
 

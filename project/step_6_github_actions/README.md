@@ -48,7 +48,7 @@
 ***
 
 ## How to create a GitHub workflow
-- Create the folder using the command: `mkdir .github/workflows` with the followin content:
+- Create a hidden folder and a file called `wokflows` using the command: `mkdir .github/workflows` with the followin content: 
 ```shell
 name: GitHub Actions Basic Flow
 on: [push]

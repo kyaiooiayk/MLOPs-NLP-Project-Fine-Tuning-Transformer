@@ -105,7 +105,62 @@ for obj in bucket.objects.all():
 ***
 
 ## Setting up AWS ECR
-- Navigate to your `AWS Management Console` Search for ECR and click on Get Started
+- Navigate to your `AWS Management Console` Search for ECR and click on `Get Started`.
+- Create a repository when prompted and give it a name name.
+- Update the `Dockerfile` to accomodate the changes from Google Drive to AWS S3.
+- Build the Docker image using the command: `docker build --build-arg AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID --build-arg AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY  -t inference:test .`
+-Navigate to the `ECR Navigation Console` and click on `View push command`. It looks like something like this: `aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 246113150184.dkr.ecr.us-west-2.amazonaws.com`
+- Tagging the image: `Docker tag inference:test 246113150184.dkr.ecr.us-west-2.amazonaws.com/mlops-basics:latest`
+- Pushing the image: `docker push 246113150184.dkr.ecr.us-west-2.amazonaws.com/mlops-basics:latest`
+***
+
+## Configuring GitHub Actions to use S3, ECR
+- At this points we have a `latest_model.checkpoint` and an image stored in S3 and ECR respectively. Thus, out next step will be how to make sure that when an action is trigger via GitHub Actinons this is able to push/pull to both S3 and ECR.
+- Navigate to your GitHub repositor and click on the `Settings` tab
+- Navigate to the `Secrets` section and click on `New repository secret`
+- Save the following secrets: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY` and `AWS_ACCOUNT_ID`
+- These values can be used in GitHub Actions in the following manner: `AWS_ACCESS_KEY_ID: {{secrets.AWS_ACCESS_KEY_ID}}`
+- Now we can modify the GitHub Action workflow again. [GitHub Actions Marketplace](https://github.com/marketplace?type=actions) comes with lot of predefined actions which are useful for us. Two in partiular are:
+    - `aws-actions/configure-aws-credentials@v1` will be useful to configure AWS credential environment variables for use in other GitHub Actions.
+    - `jwalton/gh-ecr-push@v1` will be useful to push/pull the image to ECR.
+- Create a hidden folder and a file called `wokflows` using the command: `mkdir .github/workflows` with the followin content. If the file is already there then: `vim .github/workflows`. This file has the following content:
+```shell
+name: Create Docker Container
+
+on: [push]
+
+jobs:
+  mlops-container:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./step_7_ecr
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-west-2
+      - name: Build container
+        run: |
+          docker build --build-arg AWS_ACCOUNT_ID=${{ secrets.AWS_ACCOUNT_ID }} \
+                       --build-arg AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
+                       --build-arg AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
+                       --tag mlops-basics .
+      - name: Push2ECR
+        id: ecr
+        uses: jwalton/gh-ecr-push@v1
+        with:
+          access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          region: us-west-2
+          image: mlops-basics:latest
+```
 ***
 
 ## References
