@@ -168,4 +168,6 @@ jobs:
 - [GitHub code](https://github.com/graviraja/MLOps-Basics/tree/main/week_7_ecr)
 - [Main GitHub project page](https://github.com/graviraja/MLOps-Basics)
 - [An introduction to what AWS is](https://github.com/kyaiooiayk/MLOps-Machine-Learning-Operations/tree/master/tutorials/AWS)
+- [Official documentation for AWS S3](https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html)
+- [Official documentation for AWS ECR](https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html)
 ***
