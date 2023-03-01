@@ -71,7 +71,7 @@
 - Configuring Github Action
 ***
 
-## [Step #7: Container Registry - AWS ECR]()
+## [Step #7: Container Registry - AWS ECR](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_7_ecr)
 - Container registry 
 - Basics of S3
 - Programmatic access to S3
