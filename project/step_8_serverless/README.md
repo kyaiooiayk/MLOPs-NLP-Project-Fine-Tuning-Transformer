@@ -61,6 +61,17 @@
 ![image](https://user-images.githubusercontent.com/89139139/222493982-e89e5515-5620-40c0-9627-c4fc86605c2f.png)
 ***
 
+## Triggering Lambda with API Gateway
+- How do we call/trigger a lambda function? There are different ways to trigger the lambda. Let's see how to do it using API Gateway.
+- API Gateway handles all the tasks involved in accepting and processing up to hundreds of thousands of concurrent API calls, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
+- On your `AWS Management Console` search for the `Amazon API Gateway` and click on `Build` button under `HTTP API`
+![image](https://user-images.githubusercontent.com/89139139/222496950-c2be3520-442a-4390-b4e6-75f2c5f0d7c5.png)
+- Fill in the `Integration` and the `Lambda function` boxes:
+![image](https://user-images.githubusercontent.com/89139139/222497241-e7f067d2-cc21-438e-98cc-b9fe10f5f793.png)
+- Upon refreshing the page you shouldbe abel to see `API Gateway` and under `Configuration` click on `API endpoint` to verify it is up and running: 
+![image](https://user-images.githubusercontent.com/89139139/222498097-065640d8-1eb8-4d6b-86b8-04e90b5cc843.png)
+***
+
 ## References
 - [Blog post](https://www.ravirajag.dev/blog/mlops-serverless)
 - [GitHub code](https://github.com/graviraja/MLOps-Basics/tree/main/week_8_serverless)
