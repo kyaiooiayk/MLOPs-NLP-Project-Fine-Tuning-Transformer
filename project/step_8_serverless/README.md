@@ -38,14 +38,13 @@
 ***
 
 ## Pros & cons
-The advantages of using a serverless architecture are:
+- **Pros**
     - It abstracts away the server details and lets you serve your code or model with few lines of code
     - It will handle the provising of servers
     - It will scale the machines up and down depending on usage
     - Does the load balancing
     - No cost when the code is not running
-
-There are some downsides also to serverless architecture.
+- **Cons**
     - Response latency: Since the code is not running readily and will only run once it is called, there will be latency till the code is up and running
     - Not useful for long running processes: Serverless providers charge for the amount of time code is running, it may cost more to run an application with long-running processes in a serverless infrastructure compared to a traditional one.
     - Difficult to debug: Debugging is difficult since the developer cannot have the access(ssh) to the machine where the code is running.
