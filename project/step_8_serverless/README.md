@@ -31,9 +31,9 @@
 ## Serveless deployment
 - A serverless architecture is a way to build and run applications and services without having to manage infrastructure. The application still runs on servers, but all the server management is done by third party service. We no longer have to provision, scale, and maintain servers to run the applications, databases, and storage systems.
 - There are at least 3 providers:
-    - Google Cloud Functions
-    - Azure Functions
-    - IMB Cloud Functions
+    - [Google Cloud Functions](https://cloud.google.com/functions/)
+    - [Azure Functions](https://azure.microsoft.com/en-us/products/functions/)
+    - [IMB Cloud Functions](https://www.ibm.com/cloud/functions)
     - AWS Lambda functions | [Notes](https://github.com/kyaiooiayk/MLOps-Machine-Learning-Operations/tree/master/tutorials/AWS/AWS_Lambda).
 ***
 
