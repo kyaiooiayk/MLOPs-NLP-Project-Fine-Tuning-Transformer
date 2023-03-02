@@ -81,27 +81,13 @@
 - Configuring GitHub Actions to use S3, ECR
 ***
 
-## Step #8: Serverless Deployment - AWS Lambda
-
-<img src="https://img.shields.io/static/v1.svg?style=for-the-badge&label=difficulty&message=medium&color=orange"/>
-
-Refer to the [Blog Post here](https://www.ravirajag.dev/blog/mlops-serverless)
-
-A serverless architecture is a way to build and run applications and services without having to manage infrastructure. The application still runs on servers, but all the server management is done by third party service (AWS). We no longer have to provision, scale, and maintain servers to run the applications. By using a serverless architecture, developers can focus on their core product instead of worrying about managing and operating servers or runtimes, either in the cloud or on-premises.
-
-In this week, I will be going through the following topics:
-
-- `Basics of Serverless`
-
-- `Basics of AWS Lambda`
-
-- `Triggering Lambda with API Gateway`
-
-- `Deploying Container using Lambda`
-
-- `Automating deployment to Lambda using Github Actions`
-
-![Docker](images/lambda_flow.png)
+## [Step #8: Serverless Deployment - AWS Lambda]()
+- Basics of Serverless
+- Basics of AWS Lambda
+- Triggering Lambda with API Gateway
+- Deploying Container using Lambda
+- Automating deployment to Lambda using Github Actions
+***
 
 
 ## Step #9: Prediction Monitoring - Kibana
