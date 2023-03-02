@@ -51,6 +51,16 @@
     - Vendor limitations: Setting up a serverless architecture with one vendor can make it difficult to switch vendors if necessary, especially since each vendor offers slightly different features and workflows.
 ***
 
+## Setting up a AWS Lambda function
+- Sign into your `AWS Management Console` and search for `Amazon Lambda`.
+- Click on `Create Function` 
+![image](https://user-images.githubusercontent.com/89139139/222493174-a9c84178-80c0-4461-abf8-f7736c3bc8c3.png)
+- Fill in `function name` and choose python for the `runtime` type
+![image](https://user-images.githubusercontent.com/89139139/222493464-bbd250d5-c91d-4a71-b4f8-1b326bd675d8.png)
+- Click on `Test` button
+![image](https://user-images.githubusercontent.com/89139139/222493982-e89e5515-5620-40c0-9627-c4fc86605c2f.png)
+***
+
 ## References
 - [Blog post](https://www.ravirajag.dev/blog/mlops-serverless)
 - [GitHub code](https://github.com/graviraja/MLOps-Basics/tree/main/week_8_serverless)
