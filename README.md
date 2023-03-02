@@ -81,7 +81,7 @@
 - Configuring GitHub Actions to use S3, ECR
 ***
 
-## [Step #8: Serverless Deployment - AWS Lambda]()
+## [Step #8: Serverless Deployment - AWS Lambda](https://github.com/kyaiooiayk/MLOPs-NLP-Project-Fine-Tuning-Transformer/tree/main/project/step_8_serverless)
 - Basics of Serverless
 - Basics of AWS Lambda
 - Triggering Lambda with API Gateway

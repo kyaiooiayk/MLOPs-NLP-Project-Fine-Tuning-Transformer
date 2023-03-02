@@ -28,8 +28,28 @@
 - If anyone else would like to follow what you have done all they need to do is: `pip install -r requirements.txt`
 ***
 
-## Serveless - Lambda
-- A serverless architecture is a way to build and run applications and services without having to manage infrastructure. The application still runs on servers, but all the server management is done by third party service (AWS). We no longer have to provision, scale, and maintain servers to run the applications, databases, and storage systems.
+## Serveless deployment
+- A serverless architecture is a way to build and run applications and services without having to manage infrastructure. The application still runs on servers, but all the server management is done by third party service. We no longer have to provision, scale, and maintain servers to run the applications, databases, and storage systems.
+- There are at least 3 providers:
+    - Google Cloud Functions
+    - Azure Functions
+    - IMB Cloud Functions
+    - AWS Lambda functions | [Notes](https://github.com/kyaiooiayk/MLOps-Machine-Learning-Operations/tree/master/tutorials/AWS/AWS_Lambda).
+***
+
+## Pros & cons
+The advantages of using a serverless architecture are:
+    - It abstracts away the server details and lets you serve your code or model with few lines of code
+    - It will handle the provising of servers
+    - It will scale the machines up and down depending on usage
+    - Does the load balancing
+    - No cost when the code is not running
+
+There are some downsides also to serverless architecture.
+    - Response latency: Since the code is not running readily and will only run once it is called, there will be latency till the code is up and running
+    - Not useful for long running processes: Serverless providers charge for the amount of time code is running, it may cost more to run an application with long-running processes in a serverless infrastructure compared to a traditional one.
+    - Difficult to debug: Debugging is difficult since the developer cannot have the access(ssh) to the machine where the code is running.
+    - Vendor limitations: Setting up a serverless architecture with one vendor can make it difficult to switch vendors if necessary, especially since each vendor offers slightly different features and workflows.
 ***
 
 ## References
