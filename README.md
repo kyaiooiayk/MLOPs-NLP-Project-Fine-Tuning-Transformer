@@ -6,7 +6,9 @@
 - Most of the scripts presented here are taken from this fantastic 8-week course called [MLOps-Basics](https://github.com/graviraja/MLOps-Basics) but are heavily modified, especially on their `README.md` files.
 - This project will cover the full MLOps cycle. We'll implement an NLP model based on a pre-trained transformer achitecture which will be be fined-tuned, deployed and ultimately served.
 
+<p align="center">
 <img width="512" alt="image" src="https://user-images.githubusercontent.com/89139139/220432027-bf2df07b-bee8-4263-aa12-81e7236e338e.png">
+<p>
 
 ***
 
