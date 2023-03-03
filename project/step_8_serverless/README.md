@@ -9,6 +9,8 @@
 - [ ] Step #7: Container Registry - AWS ECR
 - [x] Step #8: Serverless Deployment - AWS Lambda
 - [ ] Step #9: Prediction Monitoring - Kibana
+
+![image](https://user-images.githubusercontent.com/89139139/222751328-abde3de5-ec5e-4cb8-bfba-2f9808ffc752.png)
 ***
 
 ## Virtual environment setup
