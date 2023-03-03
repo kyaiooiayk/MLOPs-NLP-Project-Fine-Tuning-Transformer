@@ -154,6 +154,34 @@ CMD [ "lambda_handler.lambda_handler"]
     - Modified the default CMD to run as `lambda_handler.lambda_handler`
 ***
 
+## Adding API Gateway trigger to the Lambda
+- Go to the `API Gateway` and create a `New API`
+![image](https://user-images.githubusercontent.com/89139139/222665729-b4823332-7dcc-4885-8498-36f72e0133bd.png)
+- Select the API type as `REST API`. If you want to know more about what a REST API is see [here](https://github.com/kyaiooiayk/MLOps-Machine-Learning-Operations/tree/master/tutorials/RESTful%20APIs%20%26%20Microservices)
+![image](https://user-images.githubusercontent.com/89139139/222668130-d1933c43-8e28-4831-86bc-df0491b32186.png)
+- Fill in the `API name` and `Description` boxes: 
+![image](https://user-images.githubusercontent.com/89139139/222666231-701eff09-398a-466f-8abb-849389ae36e1.png)
+- Click on `Create Resource` under the `Actions` drop down menu:
+![image](https://user-images.githubusercontent.com/89139139/222666505-925823aa-96a1-476b-9db6-e0fad5c76dfe.png)
+- Give it the name `predict`
+![image](https://user-images.githubusercontent.com/89139139/222666587-59c93dde-8771-414b-878f-2cc71e859675.png)
+- Create a method for that resource 
+![image](https://user-images.githubusercontent.com/89139139/222666689-e4ded92f-c263-4de9-91ed-94ede9b85a72.png)
+- Type of the method. I am creating method type as `POST`. Since we are connecting the API to Lambda, choose the Integration type as Lambda function and select the correct Lambda function. Make sure to check the box Use `Lambda Proxy Integration`
+![image](https://user-images.githubusercontent.com/89139139/222666849-fa70abdd-92e0-4f93-bd83-9347baef12b9.png)
+- Deploy the API
+![image](https://user-images.githubusercontent.com/89139139/222666970-2d87e9b9-8ab1-43b1-9d26-1288096d4675.png)
+- Create a stage name for the API. I am creating the stage name as `deploy`
+![image](https://user-images.githubusercontent.com/89139139/222667073-c9de34d8-c51d-40ea-9b74-664858941c10.png)
+- Navigate to the Stages section and the post method of the resource predict. A Invoke URL will be present.
+![image](https://user-images.githubusercontent.com/89139139/222667200-a1cb4481-a0f5-4c5b-a58e-bd1f6dd7c7b4.png)
+- Go the Lambda and refresh. API Gateway trigger is enabled. Click on the `API Gateway` to check the configuration
+![image](https://user-images.githubusercontent.com/89139139/222667370-20f2637a-1500-40e9-a694-a321f495308b.png)
+- Go to `Postman` and create a POST method with the Invoke URL and body containing sentence parameter. If you want to know more about what Postman is and what it does see [here](https://github.com/kyaiooiayk/MLOps-Machine-Learning-Operations/blob/master/tutorials/postman.md)
+![image](https://user-images.githubusercontent.com/89139139/222667663-10db0c80-8681-494d-be6a-0bab84ca5a99.png)
+
+***
+
 ## References
 - [Blog post](https://www.ravirajag.dev/blog/mlops-serverless)
 - [GitHub code](https://github.com/graviraja/MLOps-Basics/tree/main/week_8_serverless)
