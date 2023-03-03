@@ -179,7 +179,16 @@ CMD [ "lambda_handler.lambda_handler"]
 ![image](https://user-images.githubusercontent.com/89139139/222667370-20f2637a-1500-40e9-a694-a321f495308b.png)
 - Go to `Postman` and create a POST method with the Invoke URL and body containing sentence parameter. If you want to know more about what Postman is and what it does see [here](https://github.com/kyaiooiayk/MLOps-Machine-Learning-Operations/blob/master/tutorials/postman.md)
 ![image](https://user-images.githubusercontent.com/89139139/222667663-10db0c80-8681-494d-be6a-0bab84ca5a99.png)
+***
 
+## Automating deployment to Lambda using Github Actions
+- Whenever we want to change some code or update model, the lambda also needs to be updated with the latest image and, we'd like to automate all what we have done above.
+- Let's create a `Github Action` for updating the Lambda function whenever the ECR image is updated.
+- Go to the `.github/workflows/build_docker_image.yaml` file and add the following
+```
+- name: Update lambda with image
+  run: aws lambda update-function-code --function-name  MLOps-Basics --image-uri <use_your_specific_uri>/mlops-basics:latest
+```
 ***
 
 ## References
