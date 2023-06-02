@@ -13,7 +13,7 @@
 
 
 ## Virtual environment setup
-- If you have your virtual environment created in step #0 active you are set to go, if not activate it with: `conda activate mlops`
+- If you have your virtual environment created in step #0, active it and you are set to go; if no, activate it with: `conda activate mlops`
 - Install these additional packages:
     - `pip install hydra-core`
     - `pip install omegaconf`
